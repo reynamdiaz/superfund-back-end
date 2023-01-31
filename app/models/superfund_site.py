@@ -28,3 +28,18 @@ class superfund_site(db.Model):
                         npl=superfund_data["NPL"]
         )
         return new_superfund
+    
+    def to_dict(self):
+        return {
+            "SITE_ID": self.site_id,
+            "SITE_NAME": self.site_name,
+            "SITE_STRT_ADRS1": self.site_strt_adrs1,
+            "SITE_CITY_NAME": self.site_city_name,
+            "SITE_STATE": self.site_state,
+            "SITE_ZIP_CODE": self.site_zip_code,
+            "SITE_CONG_DISTRICT": self.site_cong_district,
+            "SITE_CNTY_NAME": self.site_cnty_name, 
+            "LATITUDE": self.latitude,
+            "LONGITUDE": self.longitude,
+            "NPL": self.npl
+        }
