@@ -22,8 +22,8 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)
 
-    # from .routes import superfund_bp
-    # app.register_blueprint(superfund_bp)
+    from .routes import superfund_bp
+    app.register_blueprint(superfund_bp)
 
     
 

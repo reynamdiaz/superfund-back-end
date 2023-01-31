@@ -14,3 +14,17 @@ class superfund_site(db.Model):
     longitude = db.Column(db.Float)
     npl = db.Column(db.String)
 
+    @classmethod
+    def from_dict(cls, superfund_data):
+        new_superfund = superfund_site(site_id=superfund_data["SITE_ID"],site_name=superfund_data["SITE_NAME"],
+                        site_strt_adrs1=superfund_data["SITE_STRT_ADRS1"],
+                        site_city_name=superfund_data["SITE_CITY_NAME"],
+                        site_state=superfund_data["SITE_STATE"],
+                        site_zip_code=superfund_data["SITE_ZIP_CODE"],
+                        site_cong_district=superfund_data["SITE_CONG_DISTRICT"],
+                        site_cnty_name=superfund_data["SITE_CNTY_NAME"],
+                        latitude=superfund_data["LATITUDE"],
+                        longitude=superfund_data["LONGITUDE"],
+                        npl=superfund_data["NPL"]
+        )
+        return new_superfund
