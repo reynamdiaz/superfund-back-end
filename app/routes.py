@@ -1,5 +1,3 @@
-import os
-import requests
 from app import db
 from app.models.superfund_site import superfund_site
 from dotenv import load_dotenv
